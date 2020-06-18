@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import axios from 'axios';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+import PropTypes from 'prop-types';
 
 //Hooks
 import useMoneda from '../hooks/useMoneda';
@@ -91,8 +92,13 @@ const Formulario = ({setResult, setviewResult}) => {
         type="submit"
         value="Calcular"
     />
-</form>
+    </form>
    );
 }
  
+Formulario.propTypes = {
+  setResult: PropTypes.func.isRequired,
+  setviewResult: PropTypes.func.isRequired
+}
+
 export default Formulario;
